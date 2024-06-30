@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NewTaskView: View {
     @EnvironmentObject var listManager: ListManager
+    @EnvironmentObject var listLibrary: ListLibrary
     @Environment(\.dismiss) var dismiss
     var task: Task?
     
@@ -33,7 +34,6 @@ struct NewTaskView: View {
                     Button("Cancel") {
                         dismiss()
                     }
-                    .buttonStyle(.bordered)
                 }
             }
             .onAppear {
@@ -45,7 +45,11 @@ struct NewTaskView: View {
 
 struct NewTaskView_Previews: PreviewProvider {
     static var previews: some View {
+        let listLibrary = ListLibrary()
+        let listManager = ListManager(listLibrary: listLibrary)
+        
         NewTaskView()
-            .environmentObject(ListManager()) // Provide environment object for preview
+            .environmentObject(listManager)
+            .environmentObject(listLibrary)// Provide environment object for preview
     }
 }

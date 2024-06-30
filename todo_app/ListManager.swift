@@ -9,11 +9,15 @@ import Foundation
 
 class ListManager: ObservableObject {
     
+    var listLibrary: ListLibrary
     @Published var list: [Task] = []
     
-    init() {
+    init(listLibrary: ListLibrary) {
+        self.listLibrary = listLibrary
         loadTasks()
     }
+    
+    // Task/List Functionality
     
     func addTask(task: Task) {
         self.list.append(task)
@@ -33,6 +37,34 @@ class ListManager: ObservableObject {
             save()
         }
     }
+    
+    func clearList() {
+        listLibrary.saveList(fileName: self.getFileName(), listManager: self)
+        list = []
+        save()
+    }
+    
+    func rolloverList() {
+        listLibrary.saveList(fileName: self.getFileName(), listManager: self)
+        var newList: [Task] = []
+        for task in list {
+            if (!task.isComplete) {
+                newList.append(task)
+            }
+        }
+        list = newList
+        save()
+    }
+    
+    // JSON Naming and File Storage:
+    
+    func getFileName() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
+        return "List_\(dateFormatter.string(from: Date())).json"
+    }
+    
+    // Saving and encoding:
     
     func save() {
         do {
