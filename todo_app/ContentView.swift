@@ -1,4 +1,5 @@
 import SwiftUI
+import GoogleGenerativeAI
 
 struct ContentView: View {
     @EnvironmentObject var listManager: ListManager
@@ -6,7 +7,10 @@ struct ContentView: View {
     
     @State private var isPresentingNewTaskView = false
     @State private var isPresentingLibrary = false
+    @State private var isPresentingSuggestionView = false
     @State private var showAlert = false
+    
+    let model = GenerativeModel(name: "gemini-1.5-flash", apiKey: APIKey.default)
 
     var body: some View {
         NavigationStack {
@@ -67,12 +71,14 @@ struct ContentView: View {
                 
                 // Get user analytics with gemini API
                 Button(action: {
-                    print("Ask gemini")
+                    isPresentingSuggestionView = true
                 }) {
                     Image(systemName: "lightbulb")
                 }
                 .foregroundColor(.black)
-                
+                .sheet(isPresented: $isPresentingSuggestionView) {
+                    SuggestionView()
+                }
                 Spacer()
             }
         }

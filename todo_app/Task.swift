@@ -19,6 +19,10 @@ class Task: ObservableObject, Identifiable, Codable {
         self.isComplete = isComplete
     }
     
+    func turnToString() -> String {
+        return " ID: \(self.id), taskName: \(self.taskName), isComplate: \(self.isComplete) "
+    }
+    
     enum CodingKeys: String, CodingKey {
             case id, taskName, isComplete
         }

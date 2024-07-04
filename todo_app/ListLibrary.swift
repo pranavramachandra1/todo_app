@@ -39,6 +39,26 @@ class ListLibrary: ObservableObject {
         return lists
     }
     
+    func generateSuggestionPromot() -> String {
+        var prompt = "In less than 100 words and based on the task data listed by the user, tell me the 1 type of task the user excels at, the 1 type of tasks the user struggles at, and a suggestion for the user to improve in the type of task that they struggle at. Here is the user data: "
+        
+        var all_tasks: [[Task]] = getAllLists()
+        
+        if all_tasks.isEmpty {
+            return ""
+        }
+        
+        for list in all_tasks {
+            for task in list {
+                prompt += task.turnToString()
+            }
+        }
+        
+        print(prompt)
+        
+        return prompt
+    }
+    
     func save() {
         do {
             let jsonURL = URL.documentsDirectory.appending(path: "ListLibrary.json")
