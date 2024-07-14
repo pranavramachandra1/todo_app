@@ -11,6 +11,8 @@ struct TaskView: View {
     @EnvironmentObject var listManager: ListManager
     @ObservedObject var task: Task
     
+    @State var isPresentingTagSelectView: Bool = false
+    
     var body: some View {
         HStack {
             Button(action: {
@@ -25,6 +27,17 @@ struct TaskView: View {
                 .strikethrough(task.isComplete, color: .black)
             
             Spacer()
+            
+            Button(action: {
+                isPresentingTagSelectView = true
+            }) {
+                Image(systemName: "tag.fill")
+                    .foregroundColor(.blue)
+            }
+            .buttonStyle(BorderlessButtonStyle())
+            .sheet(isPresented: $isPresentingTagSelectView) {
+                TagSelectView(task: task)
+            }
         }
         .swipeActions {
             Button(role: .destructive) {

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1059DC1B2C4304DA00AC9530 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059DC1A2C4304DA00AC9530 /* TagListView.swift */; };
+		1059DC1D2C438D3900AC9530 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059DC1C2C438D3900AC9530 /* Tag.swift */; };
+		105B061D2C4430AE00F64F98 /* TagSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B061C2C4430AE00F64F98 /* TagSelectView.swift */; };
+		105B061F2C44329800F64F98 /* TagActivateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B061E2C44329800F64F98 /* TagActivateView.swift */; };
+		105B06212C443BC800F64F98 /* TagSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B06202C443BC800F64F98 /* TagSetView.swift */; };
 		1079D4542C30B5CC008C47F5 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1079D4532C30B5CC008C47F5 /* Task.swift */; };
 		1079D4562C30B72B008C47F5 /* ListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1079D4552C30B72B008C47F5 /* ListManager.swift */; };
 		1079D4582C30B964008C47F5 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1079D4572C30B964008C47F5 /* TaskView.swift */; };
@@ -46,6 +51,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1059DC1A2C4304DA00AC9530 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
+		1059DC1C2C438D3900AC9530 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		105B061C2C4430AE00F64F98 /* TagSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSelectView.swift; sourceTree = "<group>"; };
+		105B061E2C44329800F64F98 /* TagActivateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagActivateView.swift; sourceTree = "<group>"; };
+		105B06202C443BC800F64F98 /* TagSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSetView.swift; sourceTree = "<group>"; };
 		1079D4532C30B5CC008C47F5 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		1079D4552C30B72B008C47F5 /* ListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManager.swift; sourceTree = "<group>"; };
 		1079D4572C30B964008C47F5 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
@@ -130,9 +140,14 @@
 				1079D45D2C31D164008C47F5 /* CustomAlertView.swift */,
 				1079D45F2C31EB75008C47F5 /* LibraryView.swift */,
 				1079D4652C359CD6008C47F5 /* API_KEY.swift */,
+				1059DC1A2C4304DA00AC9530 /* TagListView.swift */,
+				1079D46A2C359EA5008C47F5 /* SuggestionView.swift */,
+				105B061C2C4430AE00F64F98 /* TagSelectView.swift */,
+				1059DC1C2C438D3900AC9530 /* Tag.swift */,
+				105B061E2C44329800F64F98 /* TagActivateView.swift */,
+				105B06202C443BC800F64F98 /* TagSetView.swift */,
 				10D9B2472C2BB0D7004E32CB /* Assets.xcassets */,
 				10D9B2492C2BB0D7004E32CB /* Preview Content */,
-				1079D46A2C359EA5008C47F5 /* SuggestionView.swift */,
 			);
 			path = todo_app;
 			sourceTree = "<group>";
@@ -307,10 +322,15 @@
 				1079D4602C31EB75008C47F5 /* LibraryView.swift in Sources */,
 				1079D4582C30B964008C47F5 /* TaskView.swift in Sources */,
 				1079D4662C359CD6008C47F5 /* API_KEY.swift in Sources */,
+				105B061D2C4430AE00F64F98 /* TagSelectView.swift in Sources */,
 				1079D46B2C359EA5008C47F5 /* SuggestionView.swift in Sources */,
 				10D9B2442C2BB0D5004E32CB /* todo_appApp.swift in Sources */,
+				105B061F2C44329800F64F98 /* TagActivateView.swift in Sources */,
 				1079D45E2C31D164008C47F5 /* CustomAlertView.swift in Sources */,
+				1059DC1B2C4304DA00AC9530 /* TagListView.swift in Sources */,
 				1079D4562C30B72B008C47F5 /* ListManager.swift in Sources */,
+				105B06212C443BC800F64F98 /* TagSetView.swift in Sources */,
+				1059DC1D2C438D3900AC9530 /* Tag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

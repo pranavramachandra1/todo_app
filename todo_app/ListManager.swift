@@ -11,10 +11,51 @@ class ListManager: ObservableObject {
     
     var listLibrary: ListLibrary
     @Published var list: [Task] = []
+    @Published var tags: [Tag] = []
+    @Published var viewableList: [Task] = []
     
     init(listLibrary: ListLibrary) {
         self.listLibrary = listLibrary
         loadTasks()
+        
+        let jsonURL = URL.documentsDirectory.appending(path: "Tags.json")
+        if !FileManager().fileExists(atPath: jsonURL.path) {
+            saveTags()
+        }
+        
+        loadTags()
+    }
+    
+    // Task Viewing Functionality:
+    
+    func getActiveTags() -> [Tag] {
+        var activeTags: [Tag] = []
+        
+        for tag in tags {
+            if tag.isActive {
+                activeTags.append(tag)
+            }
+        }
+        
+        return activeTags
+    }
+    
+    func getCurrentTasks() -> [Task] {
+        let activeTags: [Tag] = self.getActiveTags()
+        
+        if activeTags.count == 0 {
+            return self.list
+        }
+        
+        var filteredTasks: Set<Task> = []
+        
+        for tag in activeTags {
+            for task in tag.tasks {
+                filteredTasks.insert(task)
+            }
+        }
+        
+        return Array(filteredTasks)
     }
     
     // Task/List Functionality
@@ -22,6 +63,9 @@ class ListManager: ObservableObject {
     func addTask(task: Task) {
         self.list.append(task)
         save()
+        
+        self.viewableList = self.list
+
     }
     
     func deleteTask(task: Task) {
@@ -29,6 +73,8 @@ class ListManager: ObservableObject {
             self.list.remove(at: index)
             save()
         }
+        
+        self.viewableList = self.list
     }
     
     func toggleComplete(task: Task) {
@@ -37,6 +83,49 @@ class ListManager: ObservableObject {
             save()
         }
     }
+    
+    // Tag Functionality
+    
+    func addTag(tag: Tag) {
+        self.tags.append(tag)
+        save()
+        saveTags()
+    }
+    
+    func deleteTag(tag: Tag) {
+        // Remove the tag from the tags list
+        if let index = tags.firstIndex(where: { $0.id == tag.id }) {
+            self.tags.remove(at: index)
+        }
+        
+        for task in self.list {
+            if task.hasTag(tagID: tag.id) {
+                task.removeTag(tag: tag)
+            }
+        }
+    }
+    
+    func toggleActiveTag(tag: Tag) {
+        if let index = tags.firstIndex(where: { $0.id == tag.id }) {
+            self.tags[index].isActive.toggle()
+            saveTags()
+        }
+        
+        self.viewableList = self.getCurrentTasks()
+    }
+    
+    func toggleTag(tag: Tag, task: Task) {
+        if task.hasTag(tagID: tag.id) {
+            task.removeTag(tag: tag)
+        } else {
+            task.addTag(tag: tag)
+        }
+        
+        save()
+        saveTags()
+    }
+    
+    // List Operations:
     
     func clearList() {
         listLibrary.saveList(fileName: self.getFileName(), listManager: self)
@@ -88,4 +177,25 @@ class ListManager: ObservableObject {
         }
     }
     
+    func saveTags() {
+        do {
+            let jsonURL = URL.documentsDirectory.appending(path: "Tags.json")
+            let listData = try JSONEncoder().encode(tags)
+            try listData.write(to: jsonURL)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func loadTags() {
+        let jsonURL = URL.documentsDirectory.appending(path: "Tags.json")
+        if FileManager().fileExists(atPath: jsonURL.path) {
+            do {
+                let jsonData = try Data(contentsOf: jsonURL)
+                tags = try JSONDecoder().decode([Tag].self, from: jsonData)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

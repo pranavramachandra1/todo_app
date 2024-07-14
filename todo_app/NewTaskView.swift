@@ -15,6 +15,7 @@ struct NewTaskView: View {
     
     // Form fields:
     @State private var taskName: String = ""
+    @State private var tagName: String = ""
     
     var body: some View {
         NavigationStack {

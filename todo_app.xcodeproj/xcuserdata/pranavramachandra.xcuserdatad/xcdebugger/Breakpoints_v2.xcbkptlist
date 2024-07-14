@@ -14,42 +14,10 @@
             filePath = "todo_app/ListManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "save()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C11417C9-1C6C-489D-8248-65125E151AD1 - fa95f99deecdbe3a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "todo_app.ListManager.addTask(task: todo_app.Task, taskManager: todo_app.TaskManager) -&gt; ()"
-                  moduleName = "todo_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pranavramachandra/projects/todo_app/todo_app/ListManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  uuid = "C11417C9-1C6C-489D-8248-65125E151AD1 - fa95f99deecdbfd9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "todo_app.ListManager.addTask(task: todo_app.Task, taskManager: todo_app.TaskManager) -&gt; ()"
-                  moduleName = "todo_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pranavramachandra/projects/todo_app/todo_app/ListManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "100">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,42 +30,10 @@
             filePath = "todo_app/NewTaskView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "A57314D6-7D74-4A36-8C6D-D2BA5973ECC5 - b9bcd1790c1da382"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.TextField&lt;SwiftUI.Text&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in todo_app.NewTaskView.body.getter : some"
-                  moduleName = "todo_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pranavramachandra/projects/todo_app/todo_app/NewTaskView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  uuid = "A57314D6-7D74-4A36-8C6D-D2BA5973ECC5 - b9bcd1790c1da382"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.TextField&lt;SwiftUI.Text&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in todo_app.NewTaskView.body.getter : some"
-                  moduleName = "todo_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pranavramachandra/projects/todo_app/todo_app/NewTaskView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "184">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,103 +46,10 @@
             filePath = "todo_app/ListManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "addTask(task:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "64A9E17D-14FD-4B93-8682-24BA9E9B99AA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "todo_app/ListManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "toggleComplete(task:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "64A9E17D-14FD-4B93-8682-24BA9E9B99AA - b80f83d26e2e2ffd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "todo_app.ListManager.toggleComplete(task: todo_app.Task) -&gt; ()"
-                  moduleName = "todo_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pranavramachandra/projects/todo_app/todo_app/ListManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  uuid = "64A9E17D-14FD-4B93-8682-24BA9E9B99AA - b80f83d26e2e2e1e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "todo_app.ListManager.toggleComplete(task: todo_app.Task) -&gt; ()"
-                  moduleName = "todo_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pranavramachandra/projects/todo_app/todo_app/ListManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  uuid = "64A9E17D-14FD-4B93-8682-24BA9E9B99AA - b80f83d26e2e2e1e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "todo_app.ListManager.toggleComplete(task: todo_app.Task) -&gt; ()"
-                  moduleName = "todo_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pranavramachandra/projects/todo_app/todo_app/ListManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "252">
-               </Location>
-               <Location
-                  uuid = "64A9E17D-14FD-4B93-8682-24BA9E9B99AA - 48457cf3931ef013"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (todo_app.Task) -&gt; Swift.Bool in todo_app.ListManager.toggleComplete(task: todo_app.Task) -&gt; ()"
-                  moduleName = "todo_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pranavramachandra/projects/todo_app/todo_app/ListManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "148">
-               </Location>
-               <Location
-                  uuid = "64A9E17D-14FD-4B93-8682-24BA9E9B99AA - b80f83d26e2e2e79"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "todo_app.ListManager.toggleComplete(task: todo_app.Task) -&gt; ()"
-                  moduleName = "todo_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pranavramachandra/projects/todo_app/todo_app/ListManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "72">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -239,67 +82,20 @@
             endingLineNumber = "14"
             landmarkName = "init()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "108519CD-AB2F-47FC-B781-7640DBC06811 - 8c78feaafc4e2f54"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "todo_app.ListLibrary.__allocating_init() -&gt; todo_app.ListLibrary"
-                  moduleName = "todo_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pranavramachandra/projects/todo_app/todo_app/ListLibrary.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "108519CD-AB2F-47FC-B781-7640DBC06811 - da0d1637a8fd93ff"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "todo_app.ListLibrary.init() -&gt; todo_app.ListLibrary"
-                  moduleName = "todo_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pranavramachandra/projects/todo_app/todo_app/ListLibrary.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "172">
-               </Location>
-               <Location
-                  uuid = "108519CD-AB2F-47FC-B781-7640DBC06811 - da0d1637a8fd93ff"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "todo_app.ListLibrary.init() -&gt; todo_app.ListLibrary"
-                  moduleName = "todo_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pranavramachandra/projects/todo_app/todo_app/ListLibrary.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "356">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "722DC6F0-17C2-4026-AD7A-1FCB72E3F3FD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "todo_app/ListManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "clearList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,8 +110,8 @@
             filePath = "todo_app/ListManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "loadTasks()"
             landmarkType = "7">
          </BreakpointContent>
@@ -349,6 +145,70 @@
             startingLineNumber = "59"
             endingLineNumber = "59"
             landmarkName = "generateSuggestionPromot()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E0FD62C5-79B2-47EE-885C-A39C8441E5A4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "todo_app/ListManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "toggleActiveTag(tag:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "911AB379-B2C2-4E04-AB4A-236A81BF3343"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "todo_app/ListManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "clearList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78C17045-4221-45A5-8BC5-5515D6BAD31B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "todo_app/Task.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "addTag(tag:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B725A12E-8452-4121-8DA0-F63082262314"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "todo_app/ListManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "toggleActiveTag(tag:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

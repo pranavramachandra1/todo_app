@@ -8,6 +8,7 @@ struct ContentView: View {
     @State private var isPresentingNewTaskView = false
     @State private var isPresentingLibrary = false
     @State private var isPresentingSuggestionView = false
+    @State private var isPresentingTagListView = false
     @State private var showAlert = false
     
     let model = GenerativeModel(name: "gemini-1.5-flash", apiKey: APIKey.default)
@@ -15,14 +16,25 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(listManager.list) { task in
+                ForEach(listManager.viewableList) { task in
                     TaskView(task: task)
                 }
             }
             .listStyle(.plain)
             .navigationTitle("ToDo:")
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        isPresentingTagListView = true
+                    }) {
+                        Image(systemName: "line.horizontal.3.decrease.circle.fill")
+                    }
+                    .foregroundColor(.blue)
+                    .sheet(isPresented: $isPresentingTagListView) {
+                        TagListView()
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
                         isPresentingNewTaskView = true
                     }) {
@@ -59,7 +71,7 @@ struct ContentView: View {
                     Image(systemName: "arrow.2.circlepath")
                 }
                 .foregroundColor(.black)
-                .alert("Test", isPresented: $showAlert) {
+                .alert("Update List:", isPresented: $showAlert) {
                     Button("Clear & create new", action: {listManager.clearList()})
                     Button("Rollover", action: {listManager.rolloverList()}).keyboardShortcut(.defaultAction)
                         Button("Cancel", role: .cancel, action: {})
