@@ -24,6 +24,8 @@ class ListManager: ObservableObject {
         }
         
         loadTags()
+        
+        viewableList = self.getCurrentTasks()
     }
     
     // Task Viewing Functionality:
@@ -121,6 +123,8 @@ class ListManager: ObservableObject {
             task.addTag(tag: tag)
         }
         
+        viewableList = self.getCurrentTasks()
+        
         save()
         saveTags()
     }
@@ -131,6 +135,8 @@ class ListManager: ObservableObject {
         listLibrary.saveList(fileName: self.getFileName(), listManager: self)
         list = []
         save()
+        
+        viewableList = self.getCurrentTasks()
     }
     
     func rolloverList() {
@@ -143,6 +149,8 @@ class ListManager: ObservableObject {
         }
         list = newList
         save()
+        
+        viewableList = self.getCurrentTasks()
     }
     
     // JSON Naming and File Storage:

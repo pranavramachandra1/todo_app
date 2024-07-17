@@ -5,6 +5,8 @@ struct ContentView: View {
     @EnvironmentObject var listManager: ListManager
     @EnvironmentObject var listLibrary: ListLibrary
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @State private var isPresentingNewTaskView = false
     @State private var isPresentingLibrary = false
     @State private var isPresentingSuggestionView = false
@@ -57,7 +59,7 @@ struct ContentView: View {
                 }) {
                     Image(systemName: "newspaper")
                 }
-                .foregroundColor(.black)
+                .foregroundColor(colorScheme == .dark ? .white: .black)
                 .sheet(isPresented: $isPresentingLibrary) {
                     LibraryView()
                 }
@@ -70,7 +72,7 @@ struct ContentView: View {
                 }) {
                     Image(systemName: "arrow.2.circlepath")
                 }
-                .foregroundColor(.black)
+                .foregroundColor(colorScheme == .dark ? .white: .black)
                 .alert("Update List:", isPresented: $showAlert) {
                     Button("Clear & create new", action: {listManager.clearList()})
                     Button("Rollover", action: {listManager.rolloverList()}).keyboardShortcut(.defaultAction)
@@ -87,7 +89,7 @@ struct ContentView: View {
                 }) {
                     Image(systemName: "lightbulb")
                 }
-                .foregroundColor(.black)
+                .foregroundColor(colorScheme == .dark ? .white: .black)
                 .sheet(isPresented: $isPresentingSuggestionView) {
                     SuggestionView()
                 }
