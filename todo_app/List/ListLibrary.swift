@@ -31,8 +31,8 @@ class ListLibrary: ObservableObject {
         save()
     }
     
-    func getAllLists() -> [[Task]] {
-        var lists: [[Task]] = []
+    func getAllLists() -> [[TodoTask]] {
+        var lists: [[TodoTask]] = []
         for fileName in fileNamesLibrary {
             lists.append(loadList(fileName: fileName))
         }
@@ -42,7 +42,7 @@ class ListLibrary: ObservableObject {
     func generateSuggestionPromot() -> String {
         var prompt = "In less than 100 words and based on the task data listed by the user, tell me the 1 type of task the user excels at, the 1 type of tasks the user struggles at, and a suggestion for the user to improve in the type of task that they struggle at. Here is the user data: "
         
-        var all_tasks: [[Task]] = getAllLists()
+        let all_tasks: [[TodoTask]] = getAllLists()
         
         if all_tasks.isEmpty {
             return ""
@@ -53,9 +53,25 @@ class ListLibrary: ObservableObject {
                 prompt += task.turnToString()
             }
         }
+                
+        return prompt
+    }
+    
+    func generateToDoContext() -> String {
+        var prompt = ""
         
-        print(prompt)
+        let all_tasks: [[TodoTask]] = getAllLists()
         
+        if all_tasks.isEmpty {
+            return ""
+        }
+        
+        for list in all_tasks {
+            for task in list {
+                prompt += task.turnToString()
+            }
+        }
+                
         return prompt
     }
     
@@ -87,6 +103,7 @@ class ListLibrary: ObservableObject {
         do {
             let jsonURL = URL.documentsDirectory.appending(path: fileName)
             let listData = try JSONEncoder().encode(listManager.list)
+            print(jsonURL)
             try listData.write(to: jsonURL)
         } catch {
             print(error.localizedDescription)
@@ -98,12 +115,12 @@ class ListLibrary: ObservableObject {
         
     }
     
-    func loadList(fileName: String) -> [Task] {
+    func loadList(fileName: String) -> [TodoTask] {
         let jsonURL = URL.documentsDirectory.appending(path: fileName)
         if FileManager().fileExists(atPath: jsonURL.path) {
             do {
                 let jsonData = try Data(contentsOf: jsonURL)
-                let list = try JSONDecoder().decode([Task].self, from: jsonData)
+                let list = try JSONDecoder().decode([TodoTask].self, from: jsonData)
                 return list
             } catch {
                 print(error.localizedDescription)

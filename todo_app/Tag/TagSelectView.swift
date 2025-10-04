@@ -12,7 +12,7 @@ struct TagSelectView: View {
     @EnvironmentObject var listManager: ListManager
     @State var listName: String = ""
     
-    @ObservedObject var task: Task
+    @ObservedObject var task: TodoTask
     
     var body: some View {
         NavigationStack {
@@ -31,5 +31,5 @@ struct TagSelectView: View {
 }
 
 #Preview {
-    TagSelectView(task: Task(taskName: "Hello world!"))
+    TagSelectView(task: TodoTask(taskName: "Hello world!"))
 }

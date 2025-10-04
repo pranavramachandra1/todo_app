@@ -21,7 +21,6 @@ struct TagSetView: View {
                     .foregroundColor(tag.isActive ? .blue : .black)
             }
             .buttonStyle(BorderlessButtonStyle())
-            
             Text(tag.tagName)
             
             Spacer()

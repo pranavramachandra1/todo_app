@@ -7,18 +7,42 @@
 
 import Foundation
 
-class Tag: ObservableObject, Identifiable, Codable {
+class Tag: ObservableObject, Identifiable, Codable, Hashable {
     
     var id = UUID()
     @Published var tagName: String
     @Published var isActive: Bool
-    @Published var tasks: [Task]
+    @Published var tasks: [TodoTask]
     
-    init(id: UUID = UUID(), tagName: String, isActive: Bool = false, tasks: [Task] = []) {
+    init(id: UUID = UUID(), tagName: String, isActive: Bool = false, tasks: [TodoTask] = []) {
         self.id = id
         self.tagName = tagName
         self.isActive = isActive
         self.tasks = tasks
+    }
+    
+    static func == (lhs: Tag, rhs: Tag) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+            hasher.combine(id)
+        }
+    
+    func untagAll() {
+        self.tasks.removeAll()
+    }
+    
+    func untag(untagged_tasks: [TodoTask]) {
+        
+        var new_tasks: [TodoTask] = []
+        for t in self.tasks {
+            if untagged_tasks.contains(t) {
+                new_tasks.append(t)
+            }
+        }
+        
+        self.tasks = new_tasks
     }
     
     func turnToString() -> String {
@@ -34,7 +58,7 @@ class Tag: ObservableObject, Identifiable, Codable {
         id = try container.decode(UUID.self, forKey: .id)
         tagName = try container.decode(String.self, forKey: .tagName)
         isActive = try container.decode(Bool.self, forKey: .isActive)
-        tasks = try container.decode([Task].self, forKey: .tasks)
+        tasks = try container.decode([TodoTask].self, forKey: .tasks)
     }
 
     func encode(to encoder: Encoder) throws {

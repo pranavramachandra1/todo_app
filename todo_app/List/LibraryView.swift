@@ -18,7 +18,7 @@ struct LibraryView: View {
                     Picker("Select previous ToDo list", selection: $listName) {
                         Text("Select Previous ToDo List").tag("")
                         
-                        ForEach(0..<listLibrary.fileNamesLibrary.count, id: \.self) { index in
+                        ForEach((0..<listLibrary.fileNamesLibrary.count).reversed(), id: \.self) { index in
                             Text(formatFromFilename(fileName: listLibrary.fileNamesLibrary[index]))
                                 .tag(listLibrary.fileNamesLibrary[index])
                         }

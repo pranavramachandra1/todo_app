@@ -12,7 +12,7 @@ struct TagListView: View {
     @EnvironmentObject var listManager: ListManager
     @EnvironmentObject var listLibrary: ListLibrary
     @Environment(\.dismiss) var dismiss
-    var task: Task?
+    var task: TodoTask?
     
     // Form fields:
     @State private var tagName: String = ""

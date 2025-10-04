@@ -7,21 +7,23 @@
 
 import Foundation
 
-class Task: ObservableObject, Identifiable, Codable, Hashable {
+class TodoTask: ObservableObject, Identifiable, Codable, Hashable {
     
     var id = UUID()
     @Published var taskName: String
     @Published var isComplete: Bool
     @Published var tags: [UUID]
+    @Published var subTasks: [SubTask]
     
-    init(id: UUID = UUID(), taskName: String, isComplete: Bool = false, tags: [UUID] = []) {
+    init(id: UUID = UUID(), taskName: String, isComplete: Bool = false, tags: [UUID] = [], subTasks: [SubTask] = []) {
         self.id = id
         self.taskName = taskName
         self.isComplete = isComplete
         self.tags = tags
+        self.subTasks = subTasks
     }
     
-    static func == (lhs: Task, rhs: Task) -> Bool {
+    static func == (lhs: TodoTask, rhs: TodoTask) -> Bool {
         return lhs.id == rhs.id
     }
     
@@ -49,12 +51,24 @@ class Task: ObservableObject, Identifiable, Codable, Hashable {
         }
     }
     
+    func removeAllTags() {
+        self.tags.removeAll()
+    }
+    
     func hasTag(tagID: UUID) -> Bool {
         return self.tags.contains(tagID)
     }
     
+    func addSubTask(subTask: SubTask) {
+        self.subTasks.append(subTask)
+    }
+    
+    func removedSubTask(subTask: SubTask) {
+        
+    }
+    
     enum CodingKeys: String, CodingKey {
-            case id, taskName, isComplete, tags
+            case id, taskName, isComplete, tags, subTasks
         }
 
     required init(from decoder: Decoder) throws {
@@ -63,6 +77,7 @@ class Task: ObservableObject, Identifiable, Codable, Hashable {
         taskName = try container.decode(String.self, forKey: .taskName)
         isComplete = try container.decode(Bool.self, forKey: .isComplete)
         tags = try container.decode([UUID].self, forKey: .tags)
+        subTasks = try container.decode([SubTask].self, forKey: .subTasks)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -71,6 +86,7 @@ class Task: ObservableObject, Identifiable, Codable, Hashable {
         try container.encode(taskName, forKey: .taskName)
         try container.encode(isComplete, forKey: .isComplete)
         try container.encode(tags, forKey: .tags)
+        try container.encode(subTasks, forKey: .subTasks)
     }
     
 }

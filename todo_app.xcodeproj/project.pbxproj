@@ -31,6 +31,8 @@
 		10D9B2552C2BB0D8004E32CB /* todo_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D9B2542C2BB0D8004E32CB /* todo_appTests.swift */; };
 		10D9B25F2C2BB0D8004E32CB /* todo_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D9B25E2C2BB0D8004E32CB /* todo_appUITests.swift */; };
 		10D9B2612C2BB0D8004E32CB /* todo_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D9B2602C2BB0D8004E32CB /* todo_appUITestsLaunchTests.swift */; };
+		10DBD5A22CDEB7AA0002F4EB /* SubTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DBD5A12CDEB7AA0002F4EB /* SubTask.swift */; };
+		10DBD5A42CDEBC420002F4EB /* SubTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DBD5A32CDEBC420002F4EB /* SubTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		10D9B25A2C2BB0D8004E32CB /* todo_appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = todo_appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D9B25E2C2BB0D8004E32CB /* todo_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todo_appUITests.swift; sourceTree = "<group>"; };
 		10D9B2602C2BB0D8004E32CB /* todo_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todo_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		10DBD5A12CDEB7AA0002F4EB /* SubTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTask.swift; sourceTree = "<group>"; };
+		10DBD5A32CDEBC420002F4EB /* SubTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,23 +133,13 @@
 		10D9B2422C2BB0D5004E32CB /* todo_app */ = {
 			isa = PBXGroup;
 			children = (
-				1079D4632C359C44008C47F5 /* GenerativeAI-Info.plist */,
-				1079D4572C30B964008C47F5 /* TaskView.swift */,
+				10DBD5A02CDDA4200002F4EB /* ChatBot */,
+				10DBD59F2CDDA3EB0002F4EB /* List */,
+				10DBD59E2CDDA3DD0002F4EB /* Tag */,
+				10DBD59D2CDDA3BD0002F4EB /* Task */,
 				10D9B2432C2BB0D5004E32CB /* todo_appApp.swift */,
 				10D9B2452C2BB0D5004E32CB /* ContentView.swift */,
-				1079D4552C30B72B008C47F5 /* ListManager.swift */,
-				1079D4532C30B5CC008C47F5 /* Task.swift */,
-				1079D4592C30BC5A008C47F5 /* NewTaskView.swift */,
-				1079D45B2C31BE8A008C47F5 /* ListLibrary.swift */,
 				1079D45D2C31D164008C47F5 /* CustomAlertView.swift */,
-				1079D45F2C31EB75008C47F5 /* LibraryView.swift */,
-				1079D4652C359CD6008C47F5 /* API_KEY.swift */,
-				1059DC1A2C4304DA00AC9530 /* TagListView.swift */,
-				1079D46A2C359EA5008C47F5 /* SuggestionView.swift */,
-				105B061C2C4430AE00F64F98 /* TagSelectView.swift */,
-				1059DC1C2C438D3900AC9530 /* Tag.swift */,
-				105B061E2C44329800F64F98 /* TagActivateView.swift */,
-				105B06202C443BC800F64F98 /* TagSetView.swift */,
 				10D9B2472C2BB0D7004E32CB /* Assets.xcassets */,
 				10D9B2492C2BB0D7004E32CB /* Preview Content */,
 			);
@@ -175,6 +169,50 @@
 				10D9B2602C2BB0D8004E32CB /* todo_appUITestsLaunchTests.swift */,
 			);
 			path = todo_appUITests;
+			sourceTree = "<group>";
+		};
+		10DBD59D2CDDA3BD0002F4EB /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				1079D4572C30B964008C47F5 /* TaskView.swift */,
+				1079D4532C30B5CC008C47F5 /* Task.swift */,
+				1079D4592C30BC5A008C47F5 /* NewTaskView.swift */,
+				10DBD5A12CDEB7AA0002F4EB /* SubTask.swift */,
+				10DBD5A32CDEBC420002F4EB /* SubTaskView.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		10DBD59E2CDDA3DD0002F4EB /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				105B061C2C4430AE00F64F98 /* TagSelectView.swift */,
+				1059DC1C2C438D3900AC9530 /* Tag.swift */,
+				105B061E2C44329800F64F98 /* TagActivateView.swift */,
+				105B06202C443BC800F64F98 /* TagSetView.swift */,
+				1059DC1A2C4304DA00AC9530 /* TagListView.swift */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
+		10DBD59F2CDDA3EB0002F4EB /* List */ = {
+			isa = PBXGroup;
+			children = (
+				1079D4552C30B72B008C47F5 /* ListManager.swift */,
+				1079D45B2C31BE8A008C47F5 /* ListLibrary.swift */,
+				1079D45F2C31EB75008C47F5 /* LibraryView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		10DBD5A02CDDA4200002F4EB /* ChatBot */ = {
+			isa = PBXGroup;
+			children = (
+				1079D4632C359C44008C47F5 /* GenerativeAI-Info.plist */,
+				1079D4652C359CD6008C47F5 /* API_KEY.swift */,
+				1079D46A2C359EA5008C47F5 /* SuggestionView.swift */,
+			);
+			path = ChatBot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +361,7 @@
 				1079D4582C30B964008C47F5 /* TaskView.swift in Sources */,
 				1079D4662C359CD6008C47F5 /* API_KEY.swift in Sources */,
 				105B061D2C4430AE00F64F98 /* TagSelectView.swift in Sources */,
+				10DBD5A42CDEBC420002F4EB /* SubTaskView.swift in Sources */,
 				1079D46B2C359EA5008C47F5 /* SuggestionView.swift in Sources */,
 				10D9B2442C2BB0D5004E32CB /* todo_appApp.swift in Sources */,
 				105B061F2C44329800F64F98 /* TagActivateView.swift in Sources */,
@@ -330,6 +369,7 @@
 				1059DC1B2C4304DA00AC9530 /* TagListView.swift in Sources */,
 				1079D4562C30B72B008C47F5 /* ListManager.swift in Sources */,
 				105B06212C443BC800F64F98 /* TagSetView.swift in Sources */,
+				10DBD5A22CDEB7AA0002F4EB /* SubTask.swift in Sources */,
 				1059DC1D2C438D3900AC9530 /* Tag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,12 +10,13 @@ import SwiftUI
 struct TagActivateView: View {
     @EnvironmentObject var listManager: ListManager
     @ObservedObject var tag: Tag
-    @ObservedObject var task: Task
+    @ObservedObject var task: TodoTask
     
     @State var isPresentingTagSelectView: Bool = false
     
     var body: some View {
         HStack {
+
             Button(action: {
                 listManager.toggleTag(tag: tag, task: task)
             }) {
@@ -24,10 +25,12 @@ struct TagActivateView: View {
             }
             .buttonStyle(BorderlessButtonStyle())
             
+            
             Text(tag.tagName)
             
             Spacer()
         }
+        .padding(.leading, 20)
         .swipeActions {
             Button(role: .destructive) {
                 listManager.deleteTag(tag: tag)
@@ -39,5 +42,5 @@ struct TagActivateView: View {
 }
 
 #Preview {
-    TagActivateView(tag: Tag(tagName: "Personal"), task: Task(taskName: "Hello World"))
+    TagActivateView(tag: Tag(tagName: "Personal"), task: TodoTask(taskName: "Hello World"))
 }
